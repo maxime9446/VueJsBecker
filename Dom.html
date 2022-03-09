@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bonjour le monde</title>
+    </head>
+    <body>
+        Bonjour le monde
+        <div id="main"></div>
+    <script>
+        function creerElement(tagName, opts) {
+            return {
+                tagName,
+                attributs: opts.attributs,
+                enfants: opts.enfants,
+            };
+        };
+
+        function rendre(racine){
+            var doc = document.createElement('div');
+            if(doc.hasAttributes()){
+                for(var i =doc.length -1; i >=0; i--){
+                    enfant.rendre(doc);
+                }
+            }
+
+            div.forEach(element => {
+                console.log(element);
+            },
+        )};
+
+        let div= creerElement('div', {
+            attributs: {
+                id: 'main',
+            },
+            enfants: [
+                creerElement('img', {
+                    attributs: {
+                        src: 'https://media.giphy.com/media/cdNSp4L5vCU7aQrYnV/giphy.gif',
+                    },
+                }),
+            ],
+        });
+
+        let img= creerElement('img',{
+            attributs:{},
+            enfants: [
+                creerElement('img', {
+                    attributs: {
+                        src: 'https://media.giphy.com/media/cdNSp4L5vCU7aQrYnV/giphy.gif',
+                    },
+                }),
+            ],
+        });
+
+        div.mount(document.getElementById(main))
+    </script>
+    </body>
+</html>
